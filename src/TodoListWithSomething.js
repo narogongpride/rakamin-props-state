@@ -2,9 +2,14 @@ import React from "react";
 import { TodoListContext } from "./App";
 
 class TodoListWithSomething extends React.Component {
-  static contextType = TodoListContext;
   render() {
-    return <div>{this.context.todoList.map((tl) => tl + " | ")}</div>;
+    return (
+      <TodoListContext.Consumer>
+        {(context) => (
+          <div>{context.todoList.map((tl) => tl + " | ")}</div>
+        )}
+      </TodoListContext.Consumer>
+    );
   }
 }
 
