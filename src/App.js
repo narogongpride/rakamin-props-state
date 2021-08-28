@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Greetings from "./Greetings";
+import TodoList from "./TodoList";
+
+class App extends React.Component {
+  render() {
+    const person = { name: "Ananta", age: 20 };
+    return (
+      <div>
+        <Greetings person={person} value={14}/>
+        <TodoList />
+      </div>
+    );
+  }
 }
 
 export default App;
